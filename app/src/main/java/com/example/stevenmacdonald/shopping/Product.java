@@ -5,4 +5,17 @@ package com.example.stevenmacdonald.shopping;
  */
 
 public class Product {
+
+    String name;
+    int value;
+    boolean twoforone;
+
+    public Product(String name, int value, boolean twoforone){
+        this.name = name;
+        this.value = value;
+        this.twoforone = twoforone;
+    }
+
+
+    
 }
