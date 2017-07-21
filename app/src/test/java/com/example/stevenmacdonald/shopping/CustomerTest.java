@@ -34,7 +34,7 @@ public class CustomerTest {
     @Test
     public void testingTheItemIsCorrect(){
         customer.basket.addItemToBasket(product);
-        assertEquals("grapes",customer.);
+        assertEquals("grapes",customer.basket.);
     }
 
 }

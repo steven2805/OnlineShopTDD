@@ -6,14 +6,24 @@ package com.example.stevenmacdonald.shopping;
 
 public class Product {
 
+    private int barCode;
     private String name;
     private double value;
     private boolean twoforone;
 
-    public Product(String name, double value, boolean twoforone){
+    public Product(int barcode,String name, double value, boolean twoforone){
+        this.barcode = barcode;
         this.name = name;
         this.value = value;
         this.twoforone = twoforone;
+    }
+
+    public int getBarCode() {
+        return barCode;
+    }
+
+    public void setBarCode(int barCode) {
+        this.barCode = barCode;
     }
 
     public String getName() {
