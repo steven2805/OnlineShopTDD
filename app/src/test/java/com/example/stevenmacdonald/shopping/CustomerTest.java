@@ -12,9 +12,11 @@ import static junit.framework.Assert.assertEquals;
 public class CustomerTest {
 
     Customer customer;
+    Product product;
 
     @Before
     public void before(){
+        product = new Product("Grapes",2.99,false);
         customer = new Customer(1,"bob",true);
     }
 
@@ -22,4 +24,11 @@ public class CustomerTest {
     public void customerHasName(){
         assertEquals("bob", customer.getName());
     }
+
+    @Test
+    public void addingItemToCustomerBasket(){
+        customer.addItemToBasket(product);
+        assertEquals(1,customer.sizeOfBasket);
+    }
+    
 }

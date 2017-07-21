@@ -21,6 +21,11 @@ public class Customer {
         this.name = name;
         this.loyalCard = loyalCard;
         basket = new ArrayList<>();
-
     }
+
+    public String getName() {
+        return name;
+    }
+
+
 }
