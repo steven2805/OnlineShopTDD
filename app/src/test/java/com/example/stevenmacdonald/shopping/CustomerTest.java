@@ -13,11 +13,13 @@ public class CustomerTest {
 
     Customer customer;
     Product product;
+    Basket basket;
 
     @Before
     public void before(){
-        product = new Product("Grapes",2.99,false);
-        customer = new Customer(1,"bob",true);
+        product = new Product(01,"Grapes",2.99,false);
+        basket = new Basket();
+        customer = new Customer(1,"bob",true,basket);
     }
 
     @Test
@@ -31,10 +33,10 @@ public class CustomerTest {
         assertEquals(1,customer.basket.countItemsInBasket());
     }
 
-    @Test
-    public void testingTheItemIsCorrect(){
-        customer.basket.addItemToBasket(product);
-        assertEquals("grapes",customer.basket.);
-    }
+//    @Test
+//    public void testingTheItemIsCorrect(){
+//        customer.basket.addItemToBasket(product);
+//        assertEquals("grapes",customer.basket.);
+//    }
 
 }

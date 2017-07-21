@@ -16,8 +16,8 @@ public class ProductTest {
 
     @Before
     public void before(){
-        product = new Product("Apples",88.99,false);
-        product2 = new Product("Grapes", 2.99,true);
+        product = new Product(01,"Apples",88.99,false);
+        product2 = new Product(02,"Grapes", 2.99,true);
     }
 
     @Test
