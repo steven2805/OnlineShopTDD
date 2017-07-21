@@ -30,4 +30,11 @@ public class ProductTest {
         assertEquals(2.99, product2.getValue());
     }
 
+    @Test
+    public void testingHas2for1Offer(){
+        assertEquals(false, product.isTwoforone());
+    }
+
+    
+
 }
