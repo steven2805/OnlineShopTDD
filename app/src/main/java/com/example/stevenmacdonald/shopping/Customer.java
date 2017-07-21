@@ -14,24 +14,22 @@ public class Customer {
     int ID;
     String name;
     boolean loyalCard;
-    private ArrayList<Product> basket;
+    Basket basket;
 
-    public Customer(int ID, String name,boolean loyalCard){
+
+    public Customer(int ID, String name,boolean loyalCard, Basket basket){
         this.ID = ID;
         this.name = name;
         this.loyalCard = loyalCard;
-        basket = new ArrayList<>();
+        this.basket = basket;
+
     }
 
     public String getName() {
         return name;
     }
-    public void addItemToBasket(Product product){
-        basket.add(product);
-    }
 
-    public int countItemsInBasket(){
-        return this.basket.size();
-    }
+
+
 
 }

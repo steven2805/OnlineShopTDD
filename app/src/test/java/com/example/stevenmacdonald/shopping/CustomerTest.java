@@ -27,8 +27,14 @@ public class CustomerTest {
 
     @Test
     public void addingItemToCustomerBasket(){
-        customer.addItemToBasket(product);
-        assertEquals(1,customer.countItemsInBasket());
+        customer.basket.addItemToBasket(product);
+        assertEquals(1,customer.basket.countItemsInBasket());
+    }
+
+    @Test
+    public void testingTheItemIsCorrect(){
+        customer.basket.addItemToBasket(product);
+        assertEquals("grapes",customer.);
     }
 
 }
