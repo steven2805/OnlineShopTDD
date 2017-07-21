@@ -26,6 +26,12 @@ public class Customer {
     public String getName() {
         return name;
     }
+    public void addItemToBasket(Product product){
+        basket.add(product);
+    }
 
+    public int countItemsInBasket(){
+        return this.basket.size();
+    }
 
 }
