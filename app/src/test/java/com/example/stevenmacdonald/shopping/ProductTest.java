@@ -35,6 +35,13 @@ public class ProductTest {
         assertEquals(false, product.isTwoforone());
     }
 
-    
+    @Test
+    public void testingCanChangeTheName() {
+        product2.setName("Burger");
+        assertEquals("Burger",product2.getName());
+
+    }
+
+
 
 }
