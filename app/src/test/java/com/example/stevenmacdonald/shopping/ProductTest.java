@@ -12,7 +12,7 @@ import static junit.framework.Assert.assertEquals;
 public class ProductTest {
 
 
-    Product product, product2;
+    private Product product, product2;
 
     @Before
     public void before(){
