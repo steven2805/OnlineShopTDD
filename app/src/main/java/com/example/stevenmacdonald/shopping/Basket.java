@@ -25,11 +25,18 @@ public class Basket {
         return this.basket.size();
     }
 
-//    public String basketItemByID(){
-//        for(Product product: basket){
-//            if product.
-//        }
-//    }
+    public String basketItemByID(int identitiy) {
+        String productName = null;
+        for (Product product : basket) {
+            if (product.getBarCode() == identitiy) {
+                productName = product.getName();
+            }
+        }
+        return productName;
 
+    }
 
 }
+
+
+

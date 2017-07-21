@@ -33,10 +33,10 @@ public class CustomerTest {
         assertEquals(1,customer.basket.countItemsInBasket());
     }
 
-//    @Test
-//    public void testingTheItemIsCorrect(){
-//        customer.basket.addItemToBasket(product);
-//        assertEquals("grapes",customer.basket.);
-//    }
+    @Test
+    public void testingTheItemIsCorrect(){
+        customer.basket.addItemToBasket(product);
+        assertEquals("Grapes",customer.basket.basketItemByID(01));
+    }
 
 }
