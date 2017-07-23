@@ -12,6 +12,7 @@ import static junit.framework.Assert.assertEquals;
 public class BasketTest {
 
     Basket basket;
+    Customer customer;
     Product product, product2, product3;
 
     @Before
@@ -20,33 +21,30 @@ public class BasketTest {
         product2 = new Product(02,"Bread",4.00,true);
         product3 = new Product(03,"Soup",2.98,true);
         basket = new Basket();
+        basket.addItemToBasket(product);
+        basket.addItemToBasket(product2);
+
 
     }
 
 
     @Test
     public void addingItemToCustomerBasket(){
-        basket.addItemToBasket(product);
-        assertEquals(1,basket.countItemsInBasket());
+        assertEquals(2,basket.countItemsInBasket());
     }
 
     @Test
     public void testingTheItemIsCorrect(){
-        basket.addItemToBasket(product);
         assertEquals("Grapes",basket.basketItemByID(01));
     }
     @Test
     public void checkHowManyItemsHave2for1FlagSet(){
         basket.addItemToBasket(product);
-        basket.addItemToBasket(product);
-        basket.addItemToBasket(product2);
         assertEquals(1,basket.has2for1Flag());
     }
 
     @Test
     public void basketTotalNoDiscounts(){
-        basket.addItemToBasket(product);
-        basket.addItemToBasket(product2);
         assertEquals(6.00,basket.totalWithoutDiscount());
     }
 
@@ -57,9 +55,15 @@ public class BasketTest {
             basket.addItemToBasket(product);
             counter --;
         }
-        assertEquals(17.60, basket.above20checkAndDiscount());
+        assertEquals(22.40, basket.above20checkAndDiscount());
     }
 
+    @Test
+    public void applyDiscountIfCustomerCard(){
+        customer = new Customer(1,"bob",true,basket);
+        assertEquals(5.88,basket.discountIfCustomerCard(customer));
+        
+    }
 
 
 }

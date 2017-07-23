@@ -62,6 +62,15 @@ public class Basket {
         return valueToCheck;
     }
 
+    public double discountIfCustomerCard(Customer customer){
+        double basketValue = above20checkAndDiscount();
+        if(customer.loyalCard == true){
+            double discount = basketValue*0.02;
+            basketValue = basketValue - discount;
+        }
+        return basketValue;
+    }
+
 
 }
 
