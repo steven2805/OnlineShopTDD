@@ -26,17 +26,6 @@ public class CustomerTest {
     public void customerHasName(){
         assertEquals("bob", customer.getName());
     }
-
-    @Test
-    public void addingItemToCustomerBasket(){
-        customer.basket.addItemToBasket(product);
-        assertEquals(1,customer.basket.countItemsInBasket());
-    }
-
-    @Test
-    public void testingTheItemIsCorrect(){
-        customer.basket.addItemToBasket(product);
-        assertEquals("Grapes",customer.basket.basketItemByID(01));
-    }
+    
 
 }
