@@ -17,7 +17,6 @@ public class CustomerTest {
 
     @Before
     public void before(){
-        product = new Product(01,"Grapes",2.99,false);
         basket = new Basket();
         customer = new Customer(1,"bob",true,basket);
     }

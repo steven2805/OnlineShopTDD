@@ -3,6 +3,8 @@ package com.example.stevenmacdonald.shopping;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static junit.framework.Assert.assertEquals;
 
 /**
@@ -62,7 +64,19 @@ public class BasketTest {
     public void applyDiscountIfCustomerCard(){
         customer = new Customer(1,"bob",true,basket);
         assertEquals(5.88,basket.discountIfCustomerCard(customer));
-        
+    }
+
+    @Test
+    public void temptesting(){
+        basket.addItemToBasket(product);
+        basket.addItemToBasket(product);
+        basket.addItemToBasket(product);
+        basket.addItemToBasket(product2);
+        basket.addItemToBasket(product2);
+        basket.addItemToBasket(product3);
+        HashMap result = basket.testing();
+        assertEquals(0,result);
+
     }
 
 

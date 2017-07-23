@@ -1,6 +1,7 @@
 package com.example.stevenmacdonald.shopping;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by stevenmacdonald on 21/07/2017.
@@ -10,7 +11,6 @@ public class Basket {
 
 
     private ArrayList<Product> basket, twoForOne;
-
 
 
     public Basket() {
@@ -40,40 +40,60 @@ public class Basket {
         for (Product product : basket) {
             if (product.isTwoforone() == true) {
                 counter++;
-            } else {}
+            } else {
+            }
         }
         return counter;
     }
 
-    public double totalWithoutDiscount(){
+    public double totalWithoutDiscount() {
         double total = 0.00;
-        for(Product product: basket){
+        for (Product product : basket) {
             total += product.getValue();
         }
         return total;
     }
 
-    public double above20checkAndDiscount(){
+    public double above20checkAndDiscount() {
         double valueToCheck = totalWithoutDiscount();
-        if(valueToCheck > 20.00){
-            double discount = valueToCheck*0.20;
+        if (valueToCheck > 20.00) {
+            double discount = valueToCheck * 0.20;
             valueToCheck = valueToCheck - discount;
-        }else{}
+        } else {
+        }
         return valueToCheck;
     }
 
-    public double discountIfCustomerCard(Customer customer){
+    public double discountIfCustomerCard(Customer customer) {
         double basketValue = above20checkAndDiscount();
-        if(customer.loyalCard == true){
-            double discount = basketValue*0.02;
+        if (customer.loyalCard == true) {
+            double discount = basketValue * 0.02;
             basketValue = basketValue - discount;
         }
         return basketValue;
     }
 
+///UNFINISHED CODE FOR SPLITTING EACH BUYONEGETONEFREE ITEM INTO GROUPS
+    //CODE NOT WORKING WELL DUE TO NEEDING ITEMS IN SPECIFIC ORDER
+    //FINALLY MIGHT HAVE ISSUES WITH ATTEMPTING TO DEVIDE BY ZERO
+    
+    public HashMap testing() {
+        int counter = 0;
+        HashMap twoForOneStorage = new HashMap();
+        for (Product product : basket) {
+            if (product.isTwoforone() == true) {
+                if (twoForOneStorage.containsKey(product.getBarCode())) {
+                    twoForOneStorage.put(product.getBarCode(), counter++);
+                } else {
+                    twoForOneStorage.put(product.getBarCode(), 1);
+                    counter = 0;
+                }
+            }
+
+        }
+        return twoForOneStorage;
+    }
+
+
 
 }
-
-
-
-
