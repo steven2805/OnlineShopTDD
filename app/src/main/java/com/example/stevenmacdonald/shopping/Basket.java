@@ -33,7 +33,6 @@ public class Basket {
             }
         }
         return productName;
-
     }
 
     public int has2for1Flag() {
@@ -41,8 +40,6 @@ public class Basket {
         for (Product product : basket) {
             if (product.isTwoforone() == true) {
                 counter++;
-                twoForOne.add(product);
-                basket.remove(product);
             } else {}
         }
         return counter;
@@ -52,7 +49,6 @@ public class Basket {
         double total = 0.00;
         for(Product product: basket){
             total =+ product.getValue();
-
         }
         return total;
     }

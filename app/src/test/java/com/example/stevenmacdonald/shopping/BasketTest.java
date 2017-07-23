@@ -50,6 +50,15 @@ public class BasketTest {
         assertEquals(4.00,basket.totalWithoutDiscount());
     }
 
+    @Test
+    public void applyingDiscountOver20(){
+        int counter = 10;
+        while(counter > 0){
+            basket.addItemToBasket(product);
+        }
+        assertEquals();
+    }
+
 
 
 }
