@@ -9,19 +9,18 @@ import java.util.ArrayList;
 public class Basket {
 
 
-    private ArrayList<Product> basket;
+    private ArrayList<Product> basket, twoForOne;
 
 
-
-    public Basket(){
+    public Basket() {
         basket = new ArrayList<>();
     }
 
-    public void addItemToBasket(Product product){
+    public void addItemToBasket(Product product) {
         basket.add(product);
     }
 
-    public int countItemsInBasket(){
+    public int countItemsInBasket() {
         return this.basket.size();
     }
 
@@ -36,7 +35,19 @@ public class Basket {
 
     }
 
+    public int has2for1Flag() {
+        int counter = 0;
+        for (Product product : basket) {
+            if (product.isTwoforone() == true) {
+                counter++;
+                twoForOne.add(product);
+            } else {}
+        }
+        return counter;
+
+    }
 }
+
 
 
 

@@ -26,6 +26,6 @@ public class CustomerTest {
     public void customerHasName(){
         assertEquals("bob", customer.getName());
     }
-    
+
 
 }
