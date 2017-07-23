@@ -16,7 +16,7 @@ public class BasketTest {
 
     @Before
     public void before(){
-        product = new Product(01,"Grapes",2.99,false);
+        product = new Product(01,"Grapes",2.00,false);
         product2 = new Product(02,"Bread",4.00,true);
         product3 = new Product(03,"Soup",2.98,true);
         basket = new Basket();
@@ -47,16 +47,17 @@ public class BasketTest {
     public void basketTotalNoDiscounts(){
         basket.addItemToBasket(product);
         basket.addItemToBasket(product2);
-        assertEquals(4.00,basket.totalWithoutDiscount());
+        assertEquals(6.00,basket.totalWithoutDiscount());
     }
 
     @Test
     public void applyingDiscountOver20(){
-        int counter = 10;
+        int counter = 11;
         while(counter > 0){
             basket.addItemToBasket(product);
+            counter --;
         }
-        assertEquals();
+        assertEquals(17.60, basket.above20checkAndDiscount());
     }
 
 

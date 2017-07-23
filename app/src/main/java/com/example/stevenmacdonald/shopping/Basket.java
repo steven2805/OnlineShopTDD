@@ -48,9 +48,18 @@ public class Basket {
     public double totalWithoutDiscount(){
         double total = 0.00;
         for(Product product: basket){
-            total =+ product.getValue();
+            total += product.getValue();
         }
         return total;
+    }
+
+    public double above20checkAndDiscount(){
+        double valueToCheck = totalWithoutDiscount();
+        if(valueToCheck > 20.00){
+            double discount = valueToCheck*0.20;
+            valueToCheck = valueToCheck - discount;
+        }else{}
+        return valueToCheck;
     }
 
 
