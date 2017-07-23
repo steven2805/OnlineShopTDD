@@ -43,6 +43,13 @@ public class BasketTest {
         assertEquals(1,basket.has2for1Flag());
     }
 
+    @Test
+    public void basketTotalNoDiscounts(){
+        basket.addItemToBasket(product);
+        basket.addItemToBasket(product2);
+        assertEquals(4.00,basket.totalWithoutDiscount());
+    }
+
 
 
 }

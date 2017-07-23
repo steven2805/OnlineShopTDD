@@ -12,6 +12,7 @@ public class Basket {
     private ArrayList<Product> basket, twoForOne;
 
 
+
     public Basket() {
         basket = new ArrayList<>();
     }
@@ -41,11 +42,22 @@ public class Basket {
             if (product.isTwoforone() == true) {
                 counter++;
                 twoForOne.add(product);
+                basket.remove(product);
             } else {}
         }
         return counter;
-
     }
+
+    public double totalWithoutDiscount(){
+        double total = 0.00;
+        for(Product product: basket){
+            total =+ product.getValue();
+
+        }
+        return total;
+    }
+
+
 }
 
 
